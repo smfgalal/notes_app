@@ -21,15 +21,15 @@ class NoteCard extends StatelessWidget {
                 'Flutter Tips',
                 style: TextStyle(
                   color: Colors.black87,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   'Build your career with us in Flutter and Dart ',
-                  style: TextStyle(color: Colors.black45, fontSize: 14),
+                  style: TextStyle(color: Colors.black45, fontSize: 16),
                 ),
               ),
               trailing: Icon(
