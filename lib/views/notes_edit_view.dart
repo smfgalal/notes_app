@@ -12,18 +12,16 @@ class NotesEditView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            const SizedBox(height: 40,),
+            const SizedBox(height: 40),
             CustomAppBar(
               titleText: 'Edit Notes',
               buttonIcon: Icon(Icons.check, size: 26),
               isBackIcon: true,
             ),
-            const SizedBox(height: 50,),
+            const SizedBox(height: 50),
             CustomTextField(hintText: 'Title'),
-            const SizedBox(height: 16,),
-            CustomTextField(hintText: 'Content', minLines: 15, maxLines: 50,),
-
-
+            const SizedBox(height: 16),
+            CustomTextField(hintText: 'Content', minLines: 15, maxLines: 50),
           ],
         ),
       ),
