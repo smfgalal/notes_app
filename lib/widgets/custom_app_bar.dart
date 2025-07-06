@@ -5,12 +5,13 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.titleText,
     required this.buttonIcon,
-    required this.isBackIcon,
+    required this.isBackIcon, this.onPressed,
   });
 
   final String titleText;
   final Icon buttonIcon;
   final bool isBackIcon;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,7 +34,7 @@ class CustomAppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: Center(
-            child: IconButton(onPressed: () {}, icon: buttonIcon),
+            child: IconButton(onPressed: onPressed, icon: buttonIcon),
           ),
         ),
       ],

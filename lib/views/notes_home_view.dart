@@ -30,10 +30,21 @@ class NotesHomeView extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 40),
-            const CustomAppBar(
+             CustomAppBar(
               titleText: 'Notes',
               buttonIcon: Icon(Icons.search, size: 26),
               isBackIcon: false,
+              onPressed: () {
+          //       Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => HiveBoxesView(
+          //       hiveBoxes: Boxes.allBoxes,
+          //       onError: (String errorMessage) =>
+          //       {
+          //         print(errorMessage)
+          //       })),
+          // );
+              },
             ),
             const Expanded(child: NotesListView()),
           ],

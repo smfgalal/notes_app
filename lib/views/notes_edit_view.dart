@@ -10,21 +10,50 @@ class NotesEditView extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 40),
-            CustomAppBar(
-              titleText: 'Edit Notes',
-              buttonIcon: Icon(Icons.check, size: 26),
-              isBackIcon: true,
-            ),
-            const SizedBox(height: 50),
-            CustomTextField(hintText: 'Title'),
-            const SizedBox(height: 16),
-            CustomTextField(hintText: 'Content', minLines: 15, maxLines: 50),
-          ],
-        ),
+        child: Column(children: [const SizedBox(height: 40), EditNoteForm()]),
       ),
+    );
+  }
+}
+
+class EditNoteForm extends StatefulWidget {
+  const EditNoteForm({super.key});
+
+  @override
+  State<EditNoteForm> createState() => _EditNoteFormState();
+}
+
+class _EditNoteFormState extends State<EditNoteForm> {
+  String? title, subTitle;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CustomAppBar(
+          titleText: 'Edit Notes',
+          buttonIcon: Icon(Icons.check, size: 26),
+          isBackIcon: true,
+          onPressed: () {
+            
+          },
+        ),
+        const SizedBox(height: 50),
+        CustomTextField(
+          onSaved: (value) {
+            title = value;
+          },
+          hintText: 'Title',
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          onSaved: (value) {
+            subTitle = value;
+          },
+          hintText: 'Content',
+          minLines: 15,
+          maxLines: 50,
+        ),
+      ],
     );
   }
 }
