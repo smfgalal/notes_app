@@ -30,7 +30,11 @@ class NotesHomeView extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 40),
-            const CustomAppBar(),
+            const CustomAppBar(
+              titleText: 'Notes',
+              buttonIcon: Icon(Icons.search, size: 26),
+              isBackIcon: false,
+            ),
             const Expanded(child: NotesListView()),
           ],
         ),
@@ -38,8 +42,6 @@ class NotesHomeView extends StatelessWidget {
     );
   }
 }
-
-
 
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
