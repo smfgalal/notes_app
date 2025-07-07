@@ -1,75 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:notes_app/widgets/add_bottom_modal_sheet.dart';
-import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/note_card.dart';
+import 'package:notes_app/widgets/notes_home_view/notes_home_view_body.dart';
 
 class NotesHomeView extends StatelessWidget {
   const NotesHomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: kSecondaryColor,
-        foregroundColor: Colors.white,
-        splashColor: kPrimaryColor,
-        shape: const CircleBorder(),
-        onPressed: () {
-          showModalBottomSheet(
-            isScrollControlled: true,
-            context: context,
-            builder: (context) {
-              return const AddBottomModalSheet();
-            },
-          );
-        },
-        child: const Icon(Icons.add, size: 30),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 40),
-             CustomAppBar(
-              titleText: 'Notes',
-              buttonIcon: Icon(Icons.search, size: 26),
-              isBackIcon: false,
-              onPressed: () {
-          //       Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => HiveBoxesView(
-          //       hiveBoxes: Boxes.allBoxes,
-          //       onError: (String errorMessage) =>
-          //       {
-          //         print(errorMessage)
-          //       })),
-          // );
+    return BlocProvider(
+      create: (context) => ReadNotesCubit(),
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: kSecondaryColor,
+          foregroundColor: Colors.white,
+          splashColor: kPrimaryColor,
+          shape: const CircleBorder(),
+          onPressed: () {
+            showModalBottomSheet(
+              isScrollControlled: true,
+              context: context,
+              builder: (context) {
+                return const AddBottomModalSheet();
               },
-            ),
-            const Expanded(child: NotesListView()),
-          ],
+            );
+          },
+          child: const Icon(Icons.add, size: 30),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: NotesHomeViewBody(),
         ),
       ),
     );
   }
 }
 
-class NotesListView extends StatelessWidget {
-  const NotesListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        physics: const BouncingScrollPhysics(),
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return NoteCard();
-        },
-      ),
-    );
-  }
-}
+
