@@ -19,7 +19,7 @@ class NotesListView extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: notes.length,
                   padding: EdgeInsets.zero,
-                  physics: const BouncingScrollPhysics(),
+                  physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return NoteCard(notes: notes[index]);
                   },

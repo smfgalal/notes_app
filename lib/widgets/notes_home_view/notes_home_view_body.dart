@@ -27,22 +27,10 @@ class _NotesHomeViewBodyState extends State<NotesHomeViewBody> {
           titleText: 'Notes',
           buttonIcon: Icon(Icons.search, size: 26),
           isBackIcon: false,
-          onPressed: () {
-            //       Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => HiveBoxesView(
-            //       hiveBoxes: Boxes.allBoxes,
-            //       onError: (String errorMessage) =>
-            //       {
-            //         print(errorMessage)
-            //       })),
-            // );
-          },
+          onPressed: () {},
         ),
         const Expanded(child: NotesListView()),
       ],
     );
   }
 }
-
-
