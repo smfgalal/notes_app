@@ -5,6 +5,7 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
+import 'package:notes_app/widgets/bottom_sheet/notes_colors_list.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -77,7 +78,9 @@ class _AddBottomSheetFormState extends State<AddBottomSheetForm> {
             maxLines: 50,
             minLines: 8,
           ),
-          const SizedBox(height: 64),
+          const SizedBox(height: 32),
+          const NoteColorsItemsList(),
+          const SizedBox(height: 32),
           BlocBuilder<AddNotesCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
