@@ -5,7 +5,7 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
-import 'package:notes_app/widgets/bottom_sheet/notes_colors_list.dart';
+import 'package:notes_app/widgets/colors_lists/add_notes_colors_list.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -96,7 +96,7 @@ class _AddBottomSheetFormState extends State<AddBottomSheetForm> {
                       title: title!,
                       subTitle: subTitle!,
                       noteDate: formattedCurrentDate,
-                      color: Colors.amber.toARGB32(),
+                      color: Color(0xfffca311).toARGB32(),
                     );
                     BlocProvider.of<AddNotesCubit>(context).addNote(notesModel);
                   } else {
