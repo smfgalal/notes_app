@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
@@ -22,6 +24,7 @@ class AddBottomModalSheet extends StatelessWidget {
             }
             if (state is AddNoteSuccess) {
               Navigator.pop(context);
+              BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
             }
           },
           builder: (context, state) {
@@ -82,10 +85,14 @@ class _AddBottomSheetFormState extends State<AddBottomSheetForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    var currentDate = DateTime.now();
+                    var formattedCurrentDate = DateFormat.yMMMMd()
+                        .add_jm()
+                        .format(currentDate);
                     var notesModel = NotesModel(
                       title: title!,
                       subTitle: subTitle!,
-                      noteDate: DateTime.now().toString(),
+                      noteDate: formattedCurrentDate,
                       color: Colors.amber.toARGB32(),
                     );
                     BlocProvider.of<AddNotesCubit>(context).addNote(notesModel);
