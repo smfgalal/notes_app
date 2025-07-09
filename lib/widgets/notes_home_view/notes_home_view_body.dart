@@ -27,7 +27,9 @@ class _NotesHomeViewBodyState extends State<NotesHomeViewBody> {
           titleText: 'Notes',
           buttonIcon: Icon(Icons.search, size: 26),
           isBackIcon: false,
-          onPressed: () {},
+          onPressed: () {
+            
+          },
         ),
         const Expanded(child: NotesListView()),
       ],
