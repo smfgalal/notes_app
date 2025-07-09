@@ -69,8 +69,8 @@ class _EditNoteFormState extends State<EditNoteForm> {
             subTitle = value;
           },
           hintText: 'Content',
-          minLines: 15,
-          maxLines: 50,
+          minLines: 5,
+          maxLines: 20,
         ),
         const SizedBox(height: 16),
         EditNotesColorsList(notes: widget.notes),
@@ -78,4 +78,3 @@ class _EditNoteFormState extends State<EditNoteForm> {
     );
   }
 }
-

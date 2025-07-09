@@ -9,7 +9,6 @@ const kNotesBox = 'notes_box';
 
 List<Color> kNotesColors = const [
   Color(0xfffca311),
-  Color(0xfff1f2f6),
   Color(0xff0C7C59),
   Color(0xff48cae4),
   Color(0xff58A4B0),

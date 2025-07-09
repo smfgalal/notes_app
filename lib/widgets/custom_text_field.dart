@@ -21,6 +21,8 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      scrollController: ScrollController(),
+      enableInteractiveSelection: true,
       initialValue: initialValue,
       onChanged: onChanged,
       onSaved: onSaved,
