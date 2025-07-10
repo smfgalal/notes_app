@@ -7,14 +7,20 @@ import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/notes_home_view.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+
 
 void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NotesModelAdapter());
   await Hive.openBox<NotesModel>(kNotesBox);
   runApp(const NotesApp());
+  //FlutterNativeSplash.remove();
 }
+
 
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
