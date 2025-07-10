@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
-import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
-import 'package:notes_app/models/notes_model.dart';
-import 'package:notes_app/widgets/colors_lists/add_notes_colors_list.dart';
-import 'package:notes_app/widgets/custom_button.dart';
-import 'package:notes_app/widgets/custom_text_field.dart';
+import 'package:notes/constants.dart';
+import 'package:notes/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:notes/models/notes_model.dart';
+import 'package:notes/widgets/colors_lists/add_notes_colors_list.dart';
+import 'package:notes/widgets/custom_button.dart';
+import 'package:notes/widgets/custom_text_field.dart';
 
 class AddBottomModalSheet extends StatelessWidget {
   const AddBottomModalSheet({super.key});

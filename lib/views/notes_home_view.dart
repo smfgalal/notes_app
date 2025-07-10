@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
-import 'package:notes_app/widgets/add_bottom_modal_sheet.dart';
-import 'package:notes_app/widgets/notes_home_view/notes_home_view_body.dart';
+import 'package:notes/constants.dart';
+import 'package:notes/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:notes/widgets/add_bottom_modal_sheet.dart';
+import 'package:notes/widgets/notes_home_view/notes_home_view_body.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class NotesHomeView extends StatefulWidget {

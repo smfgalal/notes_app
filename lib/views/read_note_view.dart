@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
-import 'package:notes_app/models/notes_model.dart';
-import 'package:notes_app/views/notes_edit_view.dart';
+import 'package:notes/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:notes/models/notes_model.dart';
+import 'package:notes/views/notes_edit_view.dart';
 
 class ReadNoteView extends StatefulWidget {
   const ReadNoteView({super.key, required this.notes});

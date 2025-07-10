@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
-import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/notes_home_view/notes_home_view_list.dart';
+import 'package:notes/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:notes/widgets/custom_app_bar.dart';
+import 'package:notes/widgets/notes_home_view/notes_home_view_list.dart';
 
 class NotesHomeViewBody extends StatefulWidget {
   const NotesHomeViewBody({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/read_notes_cubit/read_notes_cubit.dart';
-import 'package:notes_app/models/notes_model.dart';
-import 'package:notes_app/widgets/colors_lists/edit_notes_colors_list.dart';
-import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/custom_text_field.dart';
+import 'package:notes/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:notes/models/notes_model.dart';
+import 'package:notes/widgets/colors_lists/edit_notes_colors_list.dart';
+import 'package:notes/widgets/custom_app_bar.dart';
+import 'package:notes/widgets/custom_text_field.dart';
 
 class NotesEditView extends StatelessWidget {
   const NotesEditView({super.key, required this.notes});
